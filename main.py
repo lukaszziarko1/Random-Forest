@@ -164,14 +164,14 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 clf = RandomForest(n_trees=3)
 clf.fit(X_train, y_train)
+
 y_pred = clf.predict(X_train)
 acc1 = accuracy(y_train, y_pred)
+y_pred2 = clf.predict(X_test)
+acc2 = accuracy(y_test, y_pred2)
+
 print("Training Accuracy: ", acc1)
-
-y_pred = clf.predict(X_test)
-acc2 = accuracy(y_test, y_pred)
 print("Testing Accuracy: ", acc2)
-
 
 print("Scikit-learn Training Accuracy: ", rf.acc2)
 print("Scikit-leran Testing Accuracy: ", rf.acc1)
